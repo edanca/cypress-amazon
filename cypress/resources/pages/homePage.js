@@ -1,46 +1,43 @@
-import awsShipsPage from './awsShipsPage'
 import desktopGrid  from '../components/desktopGrid'
-import desktopCarousel from '../components/desktopCarousel'
 import navbar       from '../components/navbar'
-import resultsPage  from './resultsPage'
+import base from '../Base'
 
 class HomePage {
 
-  searProductAndSelectResult(product, resultNumber) {
+  searProductAndSelectResult = (product, resultNumber) => {
     this
       .searchProduct(product)
       .selectResultAfterSearch(resultNumber)
   }
 
-  selectProductFromDesktopGridCard(cardNumber, resultNumber) {
+  selectProductFromDesktopGridCard = (cardNumber, resultNumber) => {
     this
       .selectDektopGridCard(cardNumber)
       // .selectTraditionalResult(resultNumber)
   }
 
-  typeInSearchBarAndSelectFromSuggestion(product, suggestionNumber) {
+  typeInSearchBarAndSelectFromSuggestion = (product, suggestionNumber) => {
     navbar
       .typeInSearchBar(product)
       .selectSuggestionNumber(suggestionNumber)
-    return resultsPage
+    return base.resultsPage
   }
 
-  searchProduct(product) {
+  searchProduct = (product) => {
     navbar
       .typeInSearchBar(product)
       .clickSearchBtn()
-    return resultsPage
+    return base.resultsPage
   }
 
-  selectDektopGridCard(cardNumber) {
+  selectDektopGridCard = (cardNumber) => {
     desktopGrid.selectDektopGridCard(cardNumber)
-    return resultsPage
+    return base.resultsPage
   }
 
-  selectDesktopCarousel(carouselImageNumber) {
-    desktopCarousel
-      .selectCarouselImageNumber(carouselImageNumber)
-    return awsShipsPage
+  selectTodaysDeals = () => {
+    navbar.selectTodaysDeals()
+    return base.internationalSalesOffers
   }
 }
 

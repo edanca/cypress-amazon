@@ -5,4 +5,5 @@ Cypress.Commands.add('prepareBrowser', path => {
     cy.visit(Cypress.env('baseUrl'))
   }
   cy.viewport('macbook-15')
+  cy.mockGeolocation();
 })

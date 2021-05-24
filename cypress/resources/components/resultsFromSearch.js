@@ -8,16 +8,16 @@ class ResultsFromSearch {
     'latestArrivals_rightArrow': '.a-row .a-carousel-goto-nextpage',
   }
 
-  _getResultsList() {
+  #getResultsList() {
     return cy.get(this.locators.resultsList)
   }
 
-  _getSpecificResultFromList(resultNumber) {
-    return this._getResultsList().eq(resultNumber - 1)
+  #getSpecificResultFromList(resultNumber) {
+    return this.#getResultsList().eq(resultNumber - 1)
   }
 
   selectSpecificResultFromList(resultNumber) {
-    this._getSpecificResultFromList(resultNumber).click()
+    this.#getSpecificResultFromList(resultNumber).click()
     return detailsPage
   }
 }
